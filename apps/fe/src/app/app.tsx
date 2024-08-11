@@ -1,12 +1,16 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-
-import NxWelcome from './nx-welcome';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 export function App() {
+  useEffect(() => {
+    axios({ url: '/', method: 'POST', data: { name: 'Yarin' } }).then(
+      (response) => console.log(response.data)
+    );
+  });
+
   return (
     <div>
-      <NxWelcome title="fe" />
+      <p>This is the app component.</p>
     </div>
   );
 }
