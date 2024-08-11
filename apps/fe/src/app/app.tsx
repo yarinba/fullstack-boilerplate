@@ -1,17 +1,19 @@
-import axios from 'axios';
-import { useEffect } from 'react';
+import { Container, Paper, Typography } from '@mui/material';
 
 export function App() {
-  useEffect(() => {
-    axios({ url: '/', method: 'POST', data: { name: 'Yarin' } }).then(
-      (response) => console.log(response.data)
-    );
-  });
-
   return (
-    <div>
-      <p>This is the app component.</p>
-    </div>
+    <Paper
+      sx={{
+        height: '100dvh',
+        width: '100dvw',
+        borderRadius: 0,
+      }}
+      elevation={0}
+    >
+      <Container>
+        <Typography variant="h1">Hello World</Typography>
+      </Container>
+    </Paper>
   );
 }
 
